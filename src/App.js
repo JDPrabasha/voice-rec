@@ -1,8 +1,8 @@
-import logo from "./logo.svg";
 import { React, useState, useEffect } from "react";
 import "./App.css";
 import * as tf from "@tensorflow/tfjs";
 import * as speech from "@tensorflow-models/speech-commands";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 function App() {
   const [model, setModel] = useState(null);
@@ -44,10 +44,23 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Your Wish Is My Command</h1>
-        <img src={logo} className="App-logo" alt="logo" />
+        <Player
+          autoplay
+          loop
+          src="https://assets3.lottiefiles.com/private_files/lf30_njlqlc5v.json"
+          style={{ height: "300px", width: "300px" }}
+        >
+          {/* <Controls
+            visible={true}
+            buttons={["play", "repeat", "frame", "debug"]}
+          /> */}
+        </Player>
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
-        <button onClick={recognizeCommands}>Recognize</button>
-        <h3>{action ? action : "I can't hear you yet"}</h3>
+        <button onClick={recognizeCommands}>
+          <span className="button_top"> Touch me and Command me</span>
+        </button>
+        <h3>You said {action ? action : "nothing yet"}</h3>
       </header>
     </div>
   );
