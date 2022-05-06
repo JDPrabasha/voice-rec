@@ -1,9 +1,10 @@
 # Voice Recognition Application
 
+This project uses tensorflow.js to classify user speech according to a predeined set of 20 labels.
 
 In the project directory, you can run:
 
-### `npm init`
+### `npm install`
 
 to initialize the dependancies. Then run:
 
